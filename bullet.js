@@ -1,4 +1,4 @@
-var drawRegularPolygon = require('util').drawRegularPolygon;
+var drawRegularPolygon = require('./util').drawRegularPolygon;
 
 var Bullet = function Bullet (warbler) {
   this.radius = 10;
