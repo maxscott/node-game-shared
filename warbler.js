@@ -1,13 +1,14 @@
 var drawRegularPolygon = require('./util').drawRegularPolygon;
 var Bullet = require('./bullet');
 
-var Warbler = function Warbler (x, y, radius, color, color2) {
-  this.x = this.pointedX = x;
-  this.y = this.pointedY = y;
-  this.radius = radius;
+var Warbler = function Warbler (opts) {
+  this.x = this.pointedX = opts.x;
+  this.y = this.pointedY = opts.y;
+  this.radius = opts.radius;
+  this.color = opts.color;
+  this.color2 = opts.color2;
+
   this.offset = 0;
-  this.color = color;
-  this.color2 = color2;
   this.keys = [];
   this.speed = 170;
   this.bulletDelay = 0;
