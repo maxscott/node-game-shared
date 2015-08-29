@@ -14,6 +14,43 @@ var Warbler = function Warbler (opts) {
   this.bulletDelay = 0;
 }
 
+Warbler.player1 = function () {
+  return new Warbler ({
+    x: 30,
+    y: 30,
+    radius: 30,
+    color: 'rgb(12, 10, 200)',
+    color2: 'rgb(12, 100, 200)'
+  });
+}
+Warbler.player2 = function () {
+  return new Warbler ({
+    x: 400,
+    y: 30,
+    radius: 30,
+    color: 'rgb(200, 10, 12)',
+    color2: 'rgb(200, 100, 12)'
+  });
+}
+Warbler.player3 = function () {
+  return new Warbler ({
+    x: 30,
+    y: 400,
+    radius: 30,
+    color: 'rgb(12, 200, 10)',
+    color2: 'rgb(12, 200, 100)'
+  });
+}
+Warbler.player4 = function () {
+  return new Warbler ({
+    x: 400,
+    y: 400,
+    radius: 30,
+    color: 'rgb(200, 200, 10)',
+    color2: 'rgb(200, 200, 100)'
+  });
+}
+
 Warbler.prototype.render = function (ctx) {
   drawRegularPolygon(ctx, this.x, this.y, this.radius/3, this.radius, this.offset, true, this.color, true, this.color2, 10);
   drawRegularPolygon(ctx, this.pointedX, this.pointedY, 10, 3, this.offset, true, this.color, true, this.color2, 10);
