@@ -56,15 +56,25 @@ Warbler.prototype.render = function (ctx) {
   drawRegularPolygon(ctx, this.pointedX, this.pointedY, 10, 3, this.offset, true, this.color, true, this.color2, 10);
 }
 
-Warbler.prototype.update = function (dt, bullets) {
+Warbler.prototype.getCurrentActions = function () {
+  return {
+    left: this.keys['Left'],
+    right: this.keys['Right'],
+    up: this.keys['Up'],
+    down: this.keys['Down'],
+    click: this.keys['click']
+  }
+}
+
+Warbler.prototype.update = function (dt, bullets, actions) {
   this.bulletDelay = Math.max(this.bulletDelay - dt, -1);
   var adjSpeed = dt/1000 * this.speed;
-  if (this.keys["Left"])  this.x -= adjSpeed;
-  if (this.keys["Right"]) this.x += adjSpeed;
-  if (this.keys["Up"])    this.y -= adjSpeed;
-  if (this.keys["Down"])  this.y += adjSpeed;
+  if (actions.left)  this.x -= adjSpeed;
+  if (actions.right) this.x += adjSpeed;
+  if (actions.up)    this.y -= adjSpeed;
+  if (actions.down)  this.y += adjSpeed;
 
-  if (this.keys["click"] && this.bulletDelay < 0) {
+  if (actions.click && this.bulletDelay < 0) {
     bullets.push(new Bullet(this));
     this.bulletDelay = 120;
   }
