@@ -7,7 +7,7 @@ var Warbler = function Warbler (opts) {
   this.radius = opts.radius;
   this.color = opts.color;
   this.color2 = opts.color2;
-
+  this.playerNumber = opts.playerNumber || -1;
   this.offset = 0;
   this.keys = [];
   this.speed = 170;
@@ -20,7 +20,8 @@ Warbler.player1 = function () {
     y: 30,
     radius: 30,
     color: 'rgb(12, 10, 200)',
-    color2: 'rgb(12, 100, 200)'
+    color2: 'rgb(12, 100, 200)',
+    playerNumber: 1
   });
 }
 Warbler.player2 = function () {
@@ -29,7 +30,8 @@ Warbler.player2 = function () {
     y: 30,
     radius: 30,
     color: 'rgb(200, 10, 12)',
-    color2: 'rgb(200, 100, 12)'
+    color2: 'rgb(200, 100, 12)',
+    playerNumber: 2
   });
 }
 Warbler.player3 = function () {
@@ -38,7 +40,8 @@ Warbler.player3 = function () {
     y: 400,
     radius: 30,
     color: 'rgb(12, 200, 10)',
-    color2: 'rgb(12, 200, 100)'
+    color2: 'rgb(12, 200, 100)',
+    playerNumber: 3
   });
 }
 Warbler.player4 = function () {
@@ -47,7 +50,8 @@ Warbler.player4 = function () {
     y: 400,
     radius: 30,
     color: 'rgb(200, 200, 10)',
-    color2: 'rgb(200, 200, 100)'
+    color2: 'rgb(200, 200, 100)',
+    playerNumber: 4
   });
 }
 
